@@ -1,4 +1,8 @@
 <?php
 
-    $connection = mysqli_connect ('localhost', 'root', '', 'aero_escapade');  
+    $connection = new mysqli('localhost', 'root', '', 'aero_escapade');
+    
+    if ($connection->connect_error) {
+        die ("Connection Failed" . $connection->connect_error);
+    }
 ?>
