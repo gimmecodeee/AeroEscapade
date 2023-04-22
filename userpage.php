@@ -6,4 +6,6 @@
 
     echo "hi, Mikaela";
 
+    echo "hi Raven";
+
 ?>
