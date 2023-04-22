@@ -5,12 +5,14 @@
     session_start();
 
     if(isset($_POST['login'])) {
-        $check = "SELECT * FROM `login-admin` WHERE ademail = '$_POST[email]'
-                AND adpassword = '$_POST[password]'";
+        $check = "SELECT * FROM `login-admin` WHERE adname = '$_POST[username]' 
+                AND ademail = '$_POST[email]' AND adpassword = '$_POST[password]'";
         
         $result = mysqli_query($connection, $check);
 
         if (mysqli_num_rows($result) == 1) {
+            session_start();
+            $_SESSION['adminID'] = $_POST['username'];
             header('location: adminpage.php');
         }
 
@@ -23,7 +25,15 @@
             if (mysqli_num_rows($result) == 1) {
                 header('location: userpage.php');
         }
+
+        else {
+            echo '<script> alert("Incorrect Login Details") </script>';
+        }
     }
+
+    
+
+    
 
 }
 
@@ -43,6 +53,9 @@
 
     <form action="" method="POST">
 
+            <input type="text" placeholder="Username" name="username">
+            <br><br>
+    
             <input type="email" placeholder="Email Address" name="email">
             <br><br>
 
