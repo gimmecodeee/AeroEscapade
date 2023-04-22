@@ -2,6 +2,8 @@
 
     include 'connection.php';
 
-    echo "user"
+    echo "user";
+
+    echo "hi, Mikaela";
 
 ?>
