@@ -64,6 +64,8 @@
 
             <button id="login" type="submit" name="login">LOG IN</button>
 
+            <h4>Don't have an account? <a href="usersignup.php">Register Now</a></h4>
+
     </form>
     
 </body>
